@@ -7,8 +7,12 @@ Next.js x Prisma x GraphQL を利用したサンプルアプリケーション
 ## 使用技術
 
 - フロントエンド
+
   - Next.js
   - NextAuth.js (認証)
+
+- ORM
+  - Prisma
 
 ## 参考リンク
 
