@@ -12,7 +12,15 @@ Next.js x Prisma x GraphQL を利用したサンプルアプリケーション
   - NextAuth.js (認証)
 
 - ORM
+
   - Prisma
+
+- クエリ言語
+
+  - GraphQL
+
+- その他
+  - GraphQL Code Generator（型情報の自動生成に利用）
 
 ## 参考リンク
 
