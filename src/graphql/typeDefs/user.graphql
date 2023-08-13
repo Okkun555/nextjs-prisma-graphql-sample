@@ -1,5 +1,11 @@
 type User {
   id: ID
   name: String
-  Email: String
+  email: String
+}
+
+fragment UserFragment on User {
+  id
+  name
+  email
 }
