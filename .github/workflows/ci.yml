@@ -6,34 +6,46 @@ on:
     pull_request:
       branches:
         - main
-  jobs:
-    lint:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-node@v3
-          with:
-            node-version-file: '.node-version'
-            cache: 'yarn'
-          - run: yarn install
-          - run: yarn lint
-    type-check:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-node@v3
-          with:
-            node-version-file: '.node-version'
-            cache: 'yarn'
-          - run: yarn install
-          - run: yarn typecheck
-    test:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-node@v3
-          with:
-            node-version-file: '.node-version'
-            cache: 'yarn'
-          - run: yarn install
-          - run: yarn test
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.node-version'
+          cache: 'yarn'
+      - name: Install Dependencies
+        run: yarn install
+      - name: Run Linting
+        run: yarn lint
+  type-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.node-version'
+          cache: 'yarn'
+      - name: Install Dependencies
+        run: yarn install
+      - name: Run Type Checking
+        run: yarn typecheck
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.node-version'
+          cache: 'yarn'
+      - name: Install Dependencies
+        run: yarn install
+      - name: Run Tests
+        run: yarn test
